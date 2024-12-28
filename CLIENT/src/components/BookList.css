@@ -16,7 +16,7 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 8px;
-  width: 200px; /* Ajusta el tamaño de las tarjetas de libros */
+  width: 250px; /* Ajustado a 250px para hacer las tarjetas más anchas */
   cursor: pointer;
   transition: transform 0.3s; /* Mantiene la transición para el hover */
   display: flex;
@@ -81,5 +81,5 @@
 .book-list__cart {
   position: absolute;
   bottom: -2px;
-  right: -10px;
+  right: -5px;
 }
