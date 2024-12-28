@@ -23,7 +23,7 @@
   flex-direction: column; /* Aplica flexbox para ordenar los elementos */
   position: relative; /* Necesario para posicionar el botón en la parte inferior derecha */
   box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
-  height: 100%; /* Asegura que la tarjeta tenga una altura flexible */
+  min-height: 400px; /* Asegura que todas las tarjetas tengan al menos 400px de altura */
 }
 
 /* Efecto de hover */
@@ -62,12 +62,25 @@
   transition: none; /* Elimina cualquier transición en el autor */
 }
 
+/* Contenedor de la información (calificación y stock) */
+.book-list__info {
+  margin-top: auto; /* Empuja la calificación y el stock hacia el final */
+  display: flex;
+  flex-direction: column; /* Coloca la calificación y el stock uno debajo del otro */
+}
+
 /* Calificación */
 .book-list__rating {
-  font-size: 16px;
+  font-size: 18px; /* Aumentamos el tamaño de la calificación */
   color: #ff9800;
-  margin-top: auto; /* Esto empuja la calificación hacia la parte inferior */
   margin-bottom: 5px; /* Asegura que no se pegue al stock */
+}
+
+/* Stock */
+.book-list__stock {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px; /* Espacio adicional para separar del borde inferior */
 }
 
 /* Páginas y idioma */
@@ -76,13 +89,6 @@
   font-size: 12px;
   color: #333;
   transition: none; /* Elimina cualquier transición en las páginas y el idioma */
-}
-
-/* Stock */
-.book-list__stock {
-  font-size: 14px;
-  color: #333;
-  margin-top: 5px; /* Espacio entre la calificación y el stock */
 }
 
 /* Estilo para el carrito de compras */
