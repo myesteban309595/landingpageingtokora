@@ -1,0 +1,33 @@
+/* src/components/SearchBar.css */
+
+/* Contenedor principal del SearchBar */
+.search-bar {
+    display: flex;
+    justify-content: flex-start; /* Alinea el input a la izquierda */
+    margin-bottom: 20px; /* Espacio en la parte inferior */
+    padding-left: 20px; /* Espacio a la izquierda para que no esté pegado al borde */
+  }
+  
+  /* Estilos del input de búsqueda */
+  .search-bar__input {
+    padding: 12px 20px;
+    font-size: 1rem;
+    width: 300px; /* Puedes ajustar el ancho según el diseño */
+    border: 2px solid #ccc; /* Borde gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+    outline: none; /* Eliminar el contorno por defecto */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Efecto cuando el input está enfocado */
+  .search-bar__input:focus {
+    border-color: #3498db; /* Color azul cuando está enfocado */
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); /* Sombra suave */
+  }
+  
+  /* Estilo para el placeholder */
+  .search-bar__input::placeholder {
+    color: #888; /* Color gris claro para el placeholder */
+    font-style: italic;
+  }
+  

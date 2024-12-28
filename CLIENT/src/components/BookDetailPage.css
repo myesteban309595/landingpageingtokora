@@ -1,0 +1,192 @@
+/* Estilos para la página del libro */
+.book-detail-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh; /* Esto asegura que la página ocupe toda la altura */
+    background-color: #ffffff; /* Fondo blanco */
+    color: #333; /* Texto oscuro para contraste */
+    overflow-y: auto; /* Permite que la página tenga scroll si el contenido es más grande */
+}
+
+.book-detail-page__content {
+    display: flex; /* Usamos flexbox para alinearlos en fila */
+    flex-direction: row; /* Asegura que la imagen y la descripción estén en línea horizontal */
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 40px;
+    gap: 20px; /* Espacio entre los dos componentes */
+}
+
+.book-detail-page__image {
+    width: 50%; /* Ocupa el 50% del ancho del contenedor */
+    display: flex;
+    justify-content: center; /* Centra la imagen dentro de su contenedor */
+}
+
+.book-detail-page__image img {
+    max-width: 100%; /* La imagen no se desborda */
+    max-height: 400px; /* Ajusta la altura máxima de la imagen */
+    object-fit: contain; /* Asegura que la imagen mantenga su proporción */
+    border-radius: 8px;
+}
+
+.book-detail-page__info {
+    width: 50%; /* Ocupa el otro 50% del ancho */
+    display: flex;
+    flex-direction: column; /* Alinea el contenido de la descripción de arriba hacia abajo */
+    justify-content: flex-start;
+}
+
+/* Estilo para el título del libro, aseguramos que sea negro */
+.book-detail-page__title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000; /* Aseguramos que el color del título sea negro */
+}
+
+/* Sin transiciones aplicadas a la información */
+.book-detail-page__author,
+.book-detail-page__description,
+.book-detail-page__price,
+.book-detail-page__rating,
+.book-detail-page__review {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #7f8c8d; /* Color gris para la información */
+    transition: none; /* Elimina cualquier transición en la información */
+}
+
+/* Información sobre el precio */
+.book-detail-page__price {
+    font-size: 1.2rem;
+    margin: 20px 0;
+    color: #27ae60; /* Color verde para el precio */
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #bdc3c7; /* Color gris claro para el precio original */
+}
+
+.discount-price {
+    color: #e74c3c; /* Color rojo para el precio con descuento */
+    font-weight: bold;
+}
+
+.book-detail-page__add-to-cart {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.book-detail-page__add-to-cart input {
+    padding: 5px;
+    margin-right: 10px;
+    width: 60px;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc; /* Color de borde gris */
+}
+
+.book-detail-page__add-to-cart button {
+    padding: 8px 16px;
+    background-color: #3498db; /* Azul para el botón */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.book-detail-page__add-to-cart button:hover {
+    background-color: #2980b9; /* Azul más oscuro para el hover */
+}
+
+.cart-message {
+    margin-top: 10px;
+    color: #2ecc71; /* Verde para el mensaje de éxito */
+}
+
+.book-detail-page__comments {
+    width: 100%;
+    margin-top: 40px;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.book-detail-page__comment {
+    background-color: #ecf0f1; /* Fondo gris claro para los comentarios */
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    color: #2c3e50; /* Texto oscuro para los comentarios */
+}
+
+.book-detail-page__comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.book-detail-page__comment-form button {
+    padding: 8px 16px;
+    background-color: #2ecc71; /* Verde para el botón de enviar comentario */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.book-detail-page__comment-form button:hover {
+    background-color: #27ae60; /* Verde más oscuro para el hover */
+}
+
+/* Estilos para el Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px; /* Más espacio para los elementos */
+    background-color: #34495e; /* Fondo más claro pero aún oscuro para el navbar */
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Añadido un pequeño sombreado para darle profundidad */
+}
+
+.navbar__logo {
+    font-size: 1.8rem; /* Aumento del tamaño de la fuente para el logo */
+    text-decoration: none;
+    color: white;
+    font-weight: bold; /* Hacer que el logo se destaque un poco más */
+}
+
+.navbar__cart {
+    position: relative;
+}
+
+.navbar__cart-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.4rem; /* Incremento del tamaño de fuente para hacerlo más visible */
+    display: flex;
+    align-items: center; /* Alinea el icono y el contador verticalmente */
+}
+
+.navbar__cart-icon {
+    font-size: 1.8rem; /* Aumento del tamaño del icono del carrito */
+    margin-right: 10px; /* Espacio entre el icono y el contador */
+}
+
+.navbar__cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #e74c3c; /* Fondo rojo para el contador del carrito */
+    color: white;
+    padding: 4px 8px;
+    border-radius: 50%;
+    font-size: 1rem; /* Tamaño de fuente ligeramente mayor para mejor visibilidad */
+    font-weight: bold; /* Hacer que el número del carrito se vea más destacado */
+}

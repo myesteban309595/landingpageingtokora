@@ -1,0 +1,85 @@
+/* Contenedor principal de la lista de libros */
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; /* Asegura que los libros se centren */
+  padding: 20px;
+  width: 100%; /* Asegura que ocupe siempre el 100% del ancho */
+  box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+  margin: 0 auto; /* Centra el contenedor dentro de su contenedor padre */
+}
+
+/* Estilos para cada item de libro */
+.book-list__item {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  width: 200px; /* Ajusta el tamaño de las tarjetas de libros */
+  cursor: pointer;
+  transition: transform 0.3s; /* Mantiene la transición para el hover */
+  display: flex;
+  flex-direction: column; /* Aplica flexbox para ordenar los elementos */
+  position: relative; /* Necesario para posicionar el botón en la parte inferior derecha */
+  box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+}
+
+/* Efecto de hover */
+.book-list__item:hover {
+  transform: scale(1.05);
+}
+
+/* Estilo de la imagen del libro */
+.book-list__image {
+  width: 100%; /* Esto asegura que la imagen ocupe todo el ancho de la tarjeta */
+  height: 300px; /* Establecemos un alto fijo para todas las imágenes */
+  object-fit: cover; /* Asegura que las imágenes se recorten de manera uniforme si no tienen las mismas proporciones */
+  border-radius: 4px;
+}
+
+/* Estilos para el título del libro (ajustado a color negro) */
+.book-list__title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0 5px;
+  color: #000; /* Aseguramos que el color del título sea negro */
+  transition: none; /* Elimina cualquier transición en el título */
+}
+
+/* Subtítulo del libro */
+.book-list__subtitle {
+  font-size: 14px;
+  color: #666;
+  transition: none; /* Elimina cualquier transición en el subtítulo */
+}
+
+/* Autor del libro */
+.book-list__author {
+  font-size: 14px;
+  color: #444;
+  transition: none; /* Elimina cualquier transición en el autor */
+}
+
+/* Calificación */
+.book-list__rating {
+  font-size: 18px;
+  color: #ff9800;
+  margin-top: auto; /* Esto empuja la calificación hacia la parte inferior */
+  transition: none; /* Elimina cualquier transición en la calificación */
+}
+
+/* Páginas y idioma */
+.book-list__pages,
+.book-list__language {
+  font-size: 12px;
+  color: #333;
+  transition: none; /* Elimina cualquier transición en las páginas y el idioma */
+}
+
+/* Estilo para el carrito de compras */
+.book-list__cart {
+  position: absolute;
+  bottom: -2px;
+  right: -10px;
+}

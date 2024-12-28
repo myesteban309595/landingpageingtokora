@@ -1,0 +1,146 @@
+/* El contenedor principal ocupará toda la ventana */
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    background-image: url('https://img.freepik.com/fotos-premium/libro-mundo-dentro_445983-4586.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Animación para el fade-in de la página */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Estilo del texto de bienvenida */
+.message {
+    font-size: 2rem;
+    font-weight: bold;
+    opacity: 0;
+    animation: fadeInText 0.8s ease forwards; /* Acelerado a 0.8s */
+    margin-top: -20px;
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Contenedor de los círculos para animación */
+.circle-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+}
+
+/* Estilos para los círculos */
+.circle {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    margin: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7); /* Efecto brillante */
+    animation: moveBubble 8s ease-in-out infinite, bubbleGlow 2s alternate infinite;
+}
+
+/* Animación para que los círculos se muevan como burbujas */
+@keyframes moveBubble {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    25% {
+        transform: translateY(-50px) translateX(80px);
+    }
+    50% {
+        transform: translateY(100px) translateX(-60px);
+    }
+    75% {
+        transform: translateY(-30px) translateX(100px);
+    }
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+}
+
+/* Efecto brillante de los círculos */
+@keyframes bubbleGlow {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(255, 255, 255, 0.9), 0 0 40px rgba(255, 255, 255, 0.6);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+}
+
+/* Contenedores de círculos con varias bolitas */
+.circle-container .circle:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.circle-container .circle:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.circle-container .circle:nth-child(3) {
+    animation-delay: 2s;
+}
+
+.circle-container .circle:nth-child(4) {
+    animation-delay: 3s;
+}
+
+/* Posicionar los círculos en diferentes lugares */
+.circle-container:nth-child(1) { top: 10%; left: 10%; }
+.circle-container:nth-child(2) { top: 15%; left: 70%; }
+.circle-container:nth-child(3) { top: 30%; left: 30%; }
+.circle-container:nth-child(4) { top: 50%; left: 50%; }
+.circle-container:nth-child(5) { top: 70%; left: 10%; }
+.circle-container:nth-child(6) { top: 80%; left: 80%; }
+.circle-container:nth-child(7) { top: 20%; left: 40%; }
+.circle-container:nth-child(8) { top: 60%; left: 60%; }
+.circle-container:nth-child(9) { top: 40%; left: 80%; }
+.circle-container:nth-child(10) { top: 20%; left: 10%; }
+
+/* Estilos para el encabezado */
+.message-landingpage--h1 {
+    font-size: 3rem;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeInText 3s ease 1.5s forwards;
+}
+
+/* Estilo para el texto que indica el tiempo */
+.message-landingpage {
+    font-size: 1.2rem;
+    opacity: 0;
+    animation: fadeInText 3s ease 2s forwards;
+    margin-top: 10px;
+}
