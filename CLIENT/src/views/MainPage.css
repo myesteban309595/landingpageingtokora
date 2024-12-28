@@ -1,3 +1,21 @@
+/* index.css */
+
+/* Aplicar box-sizing globalmente para que el ancho de los elementos incluya borde y relleno */
+* {
+  margin: 0; /* Eliminar márgenes por defecto */
+  padding: 0; /* Eliminar relleno por defecto */
+  box-sizing: border-box; /* Asegura que el tamaño total de los elementos se calcule correctamente */
+}
+
+/* Asegura que html y body no tengan márgenes o relleno que afecten el layout */
+html, body {
+  height: 100%; /* Asegura que cubra toda la altura */
+  width: 100%; /* Asegura que cubra todo el ancho */
+  margin: 0; /* Eliminar márgenes */
+  padding: 0; /* Eliminar relleno */
+}
+
+
 /* src/components/MainPage.css */
 
 /* Bloque principal */
@@ -10,6 +28,12 @@
   flex-direction: column;
   justify-content: flex-start; /* Cambiado a flex-start para evitar espacio vacío innecesario */
   overflow: auto; /* Permite scroll si el contenido excede la pantalla */
+  margin-bottom: 0; /* Evita márgenes adicionales en la parte inferior */
+}
+
+/* Asegura que el bloque principal se divida correctamente entre contenido y footer */
+.main-page__content {
+  flex-grow: 1; /* Hace que el contenido ocupe el espacio restante */
 }
 
 /* Navbar con los libros populares */
@@ -161,72 +185,62 @@
   color: #f39c12; /* Estilo dorado para las estrellas */
 }
 
-/* Estilos para el footer */
+/* Footer */
 .main-page__footer {
   background: linear-gradient(135deg, #6d88a3, #35475a); /* Gradiente similar al navbar */
   color: #fff;
-  padding: 40px 20px;
+  padding: 40px 0; /* Eliminar relleno lateral */
+  width: 100%; /* Asegura que ocupe todo el ancho */
+  position: relative; /* Para asegurar que no haya desplazamiento innecesario */
   text-align: center;
-  margin-top: auto; /* Asegura que el footer esté en la parte inferior de la página */
+  margin-top: 0; /* Eliminar cualquier margen superior */
+  margin-bottom: 0; /* Eliminar cualquier margen inferior */
 }
 
-.main-page__footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
+
+/* Estilos para el Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px; /* Más espacio para los elementos */
+  background-color: #34495e; /* Fondo más claro pero aún oscuro para el navbar */
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Añadido un pequeño sombreado para darle profundidad */
 }
 
-.main-page__footer-links {
-  margin-bottom: 20px;
-}
-
-.main-page__footer-links ul {
-  list-style: none;
-  padding: 0;
-}
-
-.main-page__footer-links ul li {
-  display: inline;
-  margin: 0 15px;
-}
-
-.main-page__footer-links ul li a {
-  color: #fff;
+.navbar__logo {
+  font-size: 1.8rem; /* Aumento del tamaño de la fuente para el logo */
   text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.3s ease;
+  color: white;
+  font-weight: bold; /* Hacer que el logo se destaque un poco más */
 }
 
-.main-page__footer-links ul li a:hover {
-  color: #f39c12; /* Color dorado al hacer hover */
+.navbar__cart {
+  position: relative;
 }
 
-.main-page__footer-socials {
-  margin-bottom: 20px;
+.navbar__cart-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.4rem; /* Incremento del tamaño de fuente para hacerlo más visible */
+  display: flex;
+  align-items: center; /* Alinea el icono y el contador verticalmente */
 }
 
-.main-page__footer-socials a {
-  margin: 0 15px;
+.navbar__cart-icon {
+  font-size: 1.8rem; /* Aumento del tamaño del icono del carrito */
+  margin-right: 10px; /* Espacio entre el icono y el contador */
 }
 
-.main-page__footer-socials img {
-  width: 30px;
-  height: 30px;
-  transition: transform 0.3s ease;
-}
-
-.main-page__footer-socials img:hover {
-  transform: scale(1.1); /* Efecto de aumento al hacer hover */
-}
-
-.main-page__footer-info {
-  font-size: 0.9rem;
-}
-
-.main-page__footer-info p {
-  margin: 0;
-}
-
-/* Ajustes para el fondo del footer */
-.main-page__footer {
-  border-top: 2px solid #1259f3; /* Borde superior para un toque elegante */
+.navbar__cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #e74c3c; /* Fondo rojo para el contador del carrito */
+  color: white;
+  padding: 4px 8px;
+  border-radius: 50%;
+  font-size: 1rem; /* Tamaño de fuente ligeramente mayor para mejor visibilidad */
+  font-weight: bold; /* Hacer que el número del carrito se vea más destacado */
 }

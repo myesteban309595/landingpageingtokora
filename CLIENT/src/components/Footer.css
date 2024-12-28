@@ -1,0 +1,76 @@
+/* Estilos para el footer */
+.main-page__footer {
+    background: linear-gradient(135deg, #6d88a3, #35475a); /* Gradiente similar al navbar */
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: auto; /* Asegura que el footer esté en la parte inferior de la página */
+  }
+  
+  .main-page__footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .main-page__footer-links {
+    margin-bottom: 20px;
+  }
+  
+  .main-page__footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .main-page__footer-links ul li {
+    display: inline;
+    margin: 0 15px;
+  }
+  
+  .main-page__footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .main-page__footer-links ul li a:hover {
+    color: #f39c12; /* Color dorado al hacer hover */
+  }
+  
+  .main-page__footer-socials {
+    margin-bottom: 20px;
+  }
+  
+  .main-page__footer-socials a {
+    margin: 0 15px;
+  }
+  
+  .main-page__footer-socials img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+  }
+  
+  .main-page__footer-socials img:hover {
+    transform: scale(1.1); /* Efecto de aumento al hacer hover */
+  }
+  
+  .main-page__footer-info {
+    font-size: 0.9rem;
+  }
+  
+  .main-page__footer-info p {
+    margin: 0;
+  }
+  
+  .main-page__footer {
+    background: linear-gradient(135deg, #6d88a3, #35475a); /* Gradiente similar al navbar */
+    color: #fff;
+    padding: 40px 0; /* Eliminar el relleno lateral */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    position: relative; /* Para asegurar que no haya desplazamiento innecesario */
+    bottom: 0; /* Asegura que se quede en la parte inferior */
+    left: 0;
+    right: 0;
+    text-align: center;
+  }

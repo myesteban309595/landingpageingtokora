@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './BookDetailPage.css';
+import Footer from '../components/Footer'
 
 const BookDetailPage = () => {
   const { bookId } = useParams();
@@ -120,12 +121,13 @@ const BookDetailPage = () => {
     <p>No hay comentarios todavía.</p>
   ) : (
     comments.map((comment, index) => (
-      <div key={index} className="book-detail-page__comment">
-        <div className="book-detail-page__comment-avatar">
-          <img src={`https://i.pravatar.cc/50?img=${index + 1}`} alt="Avatar" className="comment-avatar-img" />
-        </div>
-        <p>{comment}</p>
-      </div>
+<div className="book-detail-page__comment">
+  <div className="book-detail-page__comment-avatar">
+    <img src={`https://i.pravatar.cc/50?img=${index + 1}`} alt="Avatar" className="comment-avatar-img" />
+    <span className="comment-author-name">Usuario {index + 1}</span> {/* Agregar el nombre de usuario */}
+  </div>
+  <p className='book-detail-page__comment-coments'>{comment}</p>
+</div>
     ))
   )}
 
@@ -140,6 +142,8 @@ const BookDetailPage = () => {
     <button type="submit" className="btn-submit-comment">Enviar comentario</button>
   </form>
 </div>
+
+<Footer />
 
       </div>
     </>
