@@ -115,28 +115,32 @@ const BookDetailPage = () => {
 
         {/* Sección de comentarios */}
         <div className="book-detail-page__comments">
-          <h2>Comentarios de los usuarios</h2>
-          {comments.length === 0 ? (
-            <p>No hay comentarios todavía.</p>
-          ) : (
-            comments.map((comment, index) => (
-              <div key={index} className="book-detail-page__comment">
-                <p>{comment}</p>
-              </div>
-            ))
-          )}
-
-          {/* Formulario para agregar un comentario */}
-          <form onSubmit={handleCommentSubmit} className="book-detail-page__comment-form">
-            <textarea 
-              value={newComment}
-              onChange={(e) => setNewComment(e.target.value)}
-              placeholder="Escribe tu comentario..."
-              rows="4"
-            />
-            <button type="submit" className="btn-submit-comment">Enviar comentario</button>
-          </form>
+  <h2>Comentarios de los usuarios</h2>
+  {comments.length === 0 ? (
+    <p>No hay comentarios todavía.</p>
+  ) : (
+    comments.map((comment, index) => (
+      <div key={index} className="book-detail-page__comment">
+        <div className="book-detail-page__comment-avatar">
+          <img src={`https://i.pravatar.cc/50?img=${index + 1}`} alt="Avatar" className="comment-avatar-img" />
         </div>
+        <p>{comment}</p>
+      </div>
+    ))
+  )}
+
+  {/* Formulario para agregar un comentario */}
+  <form onSubmit={handleCommentSubmit} className="book-detail-page__comment-form">
+    <textarea
+      value={newComment}
+      onChange={(e) => setNewComment(e.target.value)}
+      placeholder="Escribe tu comentario..."
+      rows="4"
+    />
+    <button type="submit" className="btn-submit-comment">Enviar comentario</button>
+  </form>
+</div>
+
       </div>
     </>
   );
@@ -146,14 +150,19 @@ const Navbar = ({ cartItems }) => {
   return (
     <nav className="navbar">
       <Link to="/main" className="navbar__logo">LibroStore</Link>
-      <div className="navbar__cart">
-        <Link to="/cart" className="navbar__cart-link">
-          <span className="navbar__cart-icon">🛒</span>
-          {cartItems > 0 && <span className="navbar__cart-count">{cartItems}</span>}
-        </Link>
+      <div className="navbar__user">
+        <div className="navbar__cart">
+          <Link to="/cart" className="navbar__cart-link">
+            <span className="navbar__cart-icon">🛒</span>
+            {cartItems > 0 && <span className="navbar__cart-count">{cartItems}</span>}
+          </Link>
+        </div>
+        <img src="https://i.pravatar.cc/50" alt="Usuario" className="navbar__user-avatar" />
+
       </div>
     </nav>
   );
 };
+
 
 export default BookDetailPage;

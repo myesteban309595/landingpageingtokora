@@ -19,24 +19,29 @@
     gap: 20px; /* Espacio entre los dos componentes */
 }
 
+/* Modificado para que la imagen sea más grande y se posicione a la izquierda */
 .book-detail-page__image {
-    width: 50%; /* Ocupa el 50% del ancho del contenedor */
+    width: 60%; /* Ajustado a 60% para que ocupe una mayor proporción de la pantalla */
     display: flex;
     justify-content: center; /* Centra la imagen dentro de su contenedor */
+    align-items: center; /* Centra la imagen verticalmente */
 }
 
+/* Modificado para que la imagen ocupe un tamaño mucho más grande */
 .book-detail-page__image img {
     max-width: 100%; /* La imagen no se desborda */
-    max-height: 400px; /* Ajusta la altura máxima de la imagen */
+    height: auto; /* Ajusta la altura automáticamente para mantener las proporciones */
     object-fit: contain; /* Asegura que la imagen mantenga su proporción */
     border-radius: 8px;
+    
 }
 
 .book-detail-page__info {
-    width: 50%; /* Ocupa el otro 50% del ancho */
+    margin-left: 350px;
+    width: 80%; /* Ajustado a 40% para hacer la sección de información más pequeña */
     display: flex;
     flex-direction: column; /* Alinea el contenido de la descripción de arriba hacia abajo */
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 /* Estilo para el título del libro, aseguramos que sea negro */
@@ -190,3 +195,32 @@
     font-size: 1rem; /* Tamaño de fuente ligeramente mayor para mejor visibilidad */
     font-weight: bold; /* Hacer que el número del carrito se vea más destacado */
 }
+
+
+/* Avatar del usuario en la barra de navegación */
+.navbar__user {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar__user-avatar {
+    border-radius: 50%; /* Hace que la imagen del avatar sea redonda */
+    width: 40px;
+    height: 40px;
+    margin-right: 15px; /* Espacio entre el avatar y el carrito */
+  }
+  
+  /* Avatar en los comentarios */
+  .book-detail-page__comment-avatar {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+  
+  .comment-avatar-img {
+    width: 40px; /* Tamaño del avatar */
+    height: 40px; /* Tamaño del avatar */
+    border-radius: 50%; /* Hace que la imagen del avatar sea redonda */
+    margin-right: 10px;
+  }
+  
