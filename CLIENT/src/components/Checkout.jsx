@@ -74,7 +74,7 @@ const Checkout = ({ cartItems, clearCart, handleClose }) => {
                         <img src={item.image} alt={item.name} className="cart-item-image" />
                         <div className="cart-item-details">
                           <p><strong>{item.name}</strong></p>
-                          <p>Precio: ${item.price}</p>
+                          <p>Precio: {item.price}</p>
                           <div className="quantity-container">
                             <label>Cantidad: </label>
                             <input
