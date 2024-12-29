@@ -149,3 +149,8 @@
 .cart-item__details_input_number{
   margin-left: 10px;
 }
+
+.cart-page-message-noitem{
+  color: black;
+  font-size: large;
+}

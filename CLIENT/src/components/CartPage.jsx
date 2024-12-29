@@ -66,7 +66,7 @@ const CartPage = () => {
       <h1 className="title-header">Carrito de Compras</h1>
 
       {cartItems.length === 0 ? (
-        <p>El carrito está vacío.</p>
+        <p className="cart-page-message-noitem">El carrito está vacío.</p>
       ) : (
         <div className="cart-items">
           {cartItems.map((item) => (
