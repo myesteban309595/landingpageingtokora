@@ -31,8 +31,8 @@ const MainPage = () => {
       // Si el libro ya está en el carrito, actualizar la cantidad
       storedCart[existingItemIndex].quantity += 1; // Puede ser cualquier cantidad que se agregue
     } else {
-      // Si no está en el carrito, agregarlo
-      storedCart.push({ ...book, quantity: 1 });
+      // Si no está en el carrito, agregarlo con la propiedad quantity
+      //storedCart.push({ ...book, quantity: 1 });
     }
 
     sessionStorage.setItem('cart', JSON.stringify(storedCart)); // Guardamos el carrito actualizado
@@ -45,7 +45,7 @@ const MainPage = () => {
   };
 
   // Lista de libros con más detalles (simulada)
-// Lista de libros con más detalles (simulada)
+ // Lista de libros con más detalles (simulada)
 const books = [
   { 
     id: 1, 
