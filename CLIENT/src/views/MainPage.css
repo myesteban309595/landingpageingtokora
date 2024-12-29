@@ -1,21 +1,3 @@
-/* index.css */
-
-/* Aplicar box-sizing globalmente para que el ancho de los elementos incluya borde y relleno */
-* {
-  margin: 0; /* Eliminar márgenes por defecto */
-  padding: 0; /* Eliminar relleno por defecto */
-  box-sizing: border-box; /* Asegura que el tamaño total de los elementos se calcule correctamente */
-}
-
-/* Asegura que html y body no tengan márgenes o relleno que afecten el layout */
-html, body {
-  height: 100%; /* Asegura que cubra toda la altura */
-  width: 100%; /* Asegura que cubra todo el ancho */
-  margin: 0; /* Eliminar márgenes */
-  padding: 0; /* Eliminar relleno */
-}
-
-
 /* src/components/MainPage.css */
 
 /* Bloque principal */
@@ -195,56 +177,4 @@ html, body {
   text-align: center;
   margin-top: 0; /* Eliminar cualquier margen superior */
   margin-bottom: 0; /* Eliminar cualquier margen inferior */
-}
-
-
-/* Estilos para el Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px; /* Más espacio para los elementos */
-  background-color: #34495e; /* Fondo más claro pero aún oscuro para el navbar */
-  color: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Añadido un pequeño sombreado para darle profundidad */
-}
-
-.navbar__logo {
-  font-size: 1.8rem; /* Aumento del tamaño de la fuente para el logo */
-  text-decoration: none;
-  color: white;
-  font-weight: bold; /* Hacer que el logo se destaque un poco más */
-}
-
-.navbar__cart {
-  position: relative;
-}
-
-.navbar__cart-link {
-  color: white;
-  text-decoration: none;
-  font-size: 1.4rem; /* Incremento del tamaño de fuente para hacerlo más visible */
-  display: flex;
-  align-items: center; /* Alinea el icono y el contador verticalmente */
-}
-
-.navbar__cart-icon {
-  font-size: 1.8rem; /* Aumento del tamaño del icono del carrito */
-  margin-right: 10px; /* Espacio entre el icono y el contador */
-}
-
-.navbar__cart-count {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  background-color: #e74c3c; /* Fondo rojo para el contador del carrito */
-  color: white;
-  padding: 4px 8px;
-  border-radius: 50%;
-  font-size: 1rem; /* Tamaño de fuente ligeramente mayor para mejor visibilidad */
-  font-weight: bold; /* Hacer que el número del carrito se vea más destacado */
-}
-
-.navbar__user-avatar {
-  margin-left: 15px;
 }

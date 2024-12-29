@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './BookDetailPage.css';
 import Footer from '../components/Footer';
-import useCart from '../components/useCartCustomHook.js'; // Importar el custom hook
+import useCart from '../components/useCartCustomHook'; // Importar el custom hook
 
 const BookDetailPage = () => {
   const { bookId } = useParams();

@@ -4,6 +4,7 @@ import './MainPage.css';
 import BookList from '../components/BookList';
 import SearchBar from '../components/SearchBar';
 import Footer from '../components/Footer';
+import NavBar from '../components/NavBar';  // Importa el componente Navbar
 
 const MainPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -45,7 +46,6 @@ const MainPage = () => {
   };
 
   // Lista de libros con más detalles (simulada)
- // Lista de libros con más detalles (simulada)
  const books = [
   { 
     id: 1, 
@@ -272,7 +272,8 @@ const MainPage = () => {
   return (
     <div className="main-page">
       {/* Navbar principal */}
-      <Navbar cartItemCount={cartItemCount} />
+      <NavBar cartItemCount={cartItemCount} />  {/* Usamos el componente Navbar aquí */}
+      
       {/* Navbar con los libros más populares */}
       <nav className="main-page__navbar">
         <div className="main-page__offer-text main-page__offer-text--left">
@@ -284,8 +285,8 @@ const MainPage = () => {
           Ofertas de fin de año
         </div>
 
-      {/* Sección para mostrar los 5 libros más populares */}
-      <div className="main-page__popular-books-list">
+        {/* Sección para mostrar los 5 libros más populares */}
+        <div className="main-page__popular-books-list">
           {popularBooks.map((book) => (
             <img
               key={book.id}
@@ -309,32 +310,17 @@ const MainPage = () => {
 
       {/* Barra de búsqueda */}
       <SearchBar onSearch={handleSearch} />
+      
       {/* Lista de libros */}
       <BookList 
         books={filteredBooks} 
         onBookClick={(bookId) => navigate(`/book/${bookId}`)} 
         handleAddToCart={handleAddToCart} // Aquí pasamos la referencia de la función
       />
+      
       {/* Footer */}
       <Footer />
     </div>
-  );
-};
-
-const Navbar = ({ cartItemCount }) => {
-  return (
-    <nav className="navbar">
-      <Link to="/" className="navbar__logo">Bienvenidos !</Link>
-      <div className="navbar__user">
-        <div className="navbar__cart">
-          <Link to="/cart" className="navbar__cart-link">
-            <span className="navbar__cart-icon">🛒</span>
-            {cartItemCount > 0 && <span className="navbar__cart-count">{cartItemCount}</span>}
-          </Link>
-        </div>
-        <img src="https://i.pravatar.cc/50" alt="Usuario" className="navbar__user-avatar" />
-      </div>
-    </nav>
   );
 };
 
