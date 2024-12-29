@@ -9,7 +9,14 @@ const CartPage = () => {
   // Función para obtener los productos del carrito del sessionStorage
   const getCartItems = () => {
     const items = JSON.parse(sessionStorage.getItem('cart')) || [];
-    setCartItems(items);
+    
+    // Asegurar que cada producto tenga una cantidad por defecto de 1
+    const updatedItems = items.map(item => ({
+      ...item,
+      quantity: item.quantity ? item.quantity : 1,  // Si no tiene cantidad, asignar 1
+    }));
+
+    setCartItems(updatedItems);
   };
 
   useEffect(() => {
@@ -32,9 +39,18 @@ const CartPage = () => {
     sessionStorage.setItem('cart', JSON.stringify(updatedItems)); // Guardar en sessionStorage
   };
 
+  // Calcular el subtotal de un item (precio * cantidad)
+  const calculateItemSubtotal = (item) => {
+    const price = parseFloat(item.price.replace('$', '').replace(',', '')); // Convertir precio a número
+    return (price * item.quantity).toFixed(2);
+  };
+
   // Calcular el total de la compra
   const calculateTotal = () => {
-    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
+    return cartItems.reduce((total, item) => {
+      const price = parseFloat(item.price.replace('$', '').replace(',', '')); // Convertir precio a número
+      return total + (price * item.quantity);
+    }, 0).toFixed(2);
   };
 
   // Comprar (limpiar el carrito y mostrar mensaje)
@@ -47,7 +63,7 @@ const CartPage = () => {
 
   return (
     <div className="cart-page">
-      <h1>Carrito de Compras</h1>
+      <h1 className="title-header">Carrito de Compras</h1>
 
       {cartItems.length === 0 ? (
         <p>El carrito está vacío.</p>
@@ -58,7 +74,14 @@ const CartPage = () => {
               <img className="cart-item__image" src={item.image} alt={item.title} />
               <div className="cart-item__details">
                 <h3>{item.title}</h3>
-                <p>Precio: ${item.price}</p>
+                <p>
+                  Precio: 
+                  <span className="original-price">{item.price}</span>
+                  <span className="discount-price">{item.discountPrice}</span>
+                </p>
+                <p>
+                  Subtotal: ${calculateItemSubtotal(item)}
+                </p>
                 <p>Cantidad:
                   <input
                     type="number"
