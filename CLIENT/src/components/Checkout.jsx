@@ -96,11 +96,11 @@ const Checkout = ({ cartItems, clearCart, handleClose }) => {
             </div>
 
             <div className="action-buttons">
-              <button onClick={handleContinueShopping} className="submit-button">
-                Continuar compra
-              </button>
               <button onClick={handleCancel} className="close-button">
                 Cancelar
+              </button>
+              <button onClick={handleContinueShopping} className="submit-button">
+                Continuar compra
               </button>
             </div>
           </>
