@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './CartPage.css';  // Estilos personalizados
+import Checkout from './Checkout'; // Importamos el componente Checkout
+import './CartPage.css'; // Estilos personalizados
 
 const CartPage = () => {
   const navigate = useNavigate();
   const [cartItems, setCartItems] = useState([]);
+  const [isCheckoutOpen, setIsCheckoutOpen] = useState(false); // Estado para controlar si se muestra el Checkout
 
   // Función para obtener los productos del carrito del sessionStorage
   const getCartItems = () => {
@@ -53,12 +55,20 @@ const CartPage = () => {
     }, 0).toFixed(2);
   };
 
-  // Comprar (limpiar el carrito y mostrar mensaje)
-  const handleBuy = () => {
-    alert(`¡Gracias por tu compra! El total es $${calculateTotal()}`);
-    sessionStorage.removeItem('cart'); // Limpiar el carrito
-    setCartItems([]); // Limpiar el estado
-    navigate('/'); // Volver a la página principal
+  // Función para manejar la apertura del Checkout
+  const handleOpenCheckout = () => {
+    setIsCheckoutOpen(true); // Cambiar el estado para abrir el Checkout
+  };
+
+  // Función para manejar el cierre del Checkout
+  const handleCloseCheckout = () => {
+    setIsCheckoutOpen(false); // Cambiar el estado para cerrar el Checkout
+  };
+
+  // Función para vaciar el carrito y redirigir a la página principal
+  const clearCart = () => {
+    sessionStorage.removeItem('cart'); // Limpiar el carrito en sessionStorage
+    setCartItems([]); // Limpiar el carrito en el estado
   };
 
   return (
@@ -100,8 +110,17 @@ const CartPage = () => {
 
       <div className="cart-total">
         <h3>Total: ${calculateTotal()}</h3>
-        <button onClick={handleBuy}>Comprar</button>
+        <button onClick={handleOpenCheckout}>Comprar</button> {/* Botón para abrir el Checkout */}
       </div>
+
+      {/* Mostrar el componente Checkout solo si el estado isCheckoutOpen es true */}
+      {isCheckoutOpen && (
+        <Checkout
+          cartItems={cartItems}  // Pasamos los productos en el carrito a Checkout
+          clearCart={clearCart}   // Pasamos la función para vaciar el carrito a Checkout
+          handleClose={handleCloseCheckout}  // Pasamos la función para cerrar el Checkout
+        />
+      )}
     </div>
   );
 };
