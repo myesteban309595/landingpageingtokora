@@ -84,6 +84,7 @@ const CartPage = () => {
                 </p>
                 <p>Cantidad:
                   <input
+                    className='cart-item__details_input_number'
                     type="number"
                     value={item.quantity}
                     min="1"

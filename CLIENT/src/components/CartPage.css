@@ -37,7 +37,7 @@
 
 .cart-item__image {
   width: 100px;
-  height: 120px;
+  height: 180px;
   object-fit: cover;
   margin-right: 20px;
   border-radius: 8px; /* Bordes redondeados en la imagen */
@@ -144,4 +144,8 @@
 .cart-total button {
   font-size: 16px;
   font-weight: 600; /* Asegura que el texto en botones sea más legible */
+}
+
+.cart-item__details_input_number{
+  margin-left: 10px;
 }

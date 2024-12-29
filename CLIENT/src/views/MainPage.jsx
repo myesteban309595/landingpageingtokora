@@ -46,7 +46,7 @@ const MainPage = () => {
 
   // Lista de libros con más detalles (simulada)
  // Lista de libros con más detalles (simulada)
-const books = [
+ const books = [
   { 
     id: 1, 
     title: 'El Principito', 
@@ -57,6 +57,8 @@ const books = [
     language: 'Español', 
     image: 'https://nidodelibros.com/wp-content/uploads/2024/02/9789877979015-.jpeg',
     stock: 5,
+    price: '$15.99',
+    discountPrice: '$12.99',
   },
   { 
     id: 2, 
@@ -68,6 +70,8 @@ const books = [
     language: 'Español', 
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6eTagQR_2oRnIyVj-BHpM5paFFqY65lNsLP0VK3m7AfFMqov6sChVuEWqbitZDJKDxFs&usqp=CAU',
     stock: 10,
+    price: '$19.99',
+    discountPrice: '$16.99',
   },
   { 
     id: 3, 
@@ -79,6 +83,8 @@ const books = [
     language: 'Inglés', 
     image: 'https://images.cdn2.buscalibre.com/fit-in/360x360/85/64/8564963be6e21ee55d0bd7b532c3a9bb.jpg',
     stock: 10,
+    price: '$14.99',
+    discountPrice: '$11.99',
   },
   { 
     id: 4, 
@@ -90,6 +96,8 @@ const books = [
     language: 'Español', 
     image: 'https://imagessl6.casadellibro.com/a/l/s5/06/9788419275806.webp',
     stock: 10,
+    price: '$18.99',
+    discountPrice: '$15.99',
   },
   { 
     id: 5, 
@@ -101,6 +109,8 @@ const books = [
     language: 'Inglés', 
     image: 'https://images.gr-assets.com/books/1553383690l/2657.jpg',
     stock: 10,
+    price: '$17.99',
+    discountPrice: '$14.99',
   },
   { 
     id: 6, 
@@ -112,6 +122,8 @@ const books = [
     language: 'Inglés', 
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoetdOeIQqR4Aq7Blat5XTgGSve_qxNkzwCqXQDmKF7Qr_Nw8qvaWRbgQqz8lrsaV2alI&usqp=CAU',
     stock: 10,
+    price: '$13.99',
+    discountPrice: '$11.49',
   },
   { 
     id: 7, 
@@ -123,6 +135,8 @@ const books = [
     language: 'Inglés', 
     image: 'https://images.gr-assets.com/books/1320399351l/1885.jpg',
     stock: 10,
+    price: '$16.99',
+    discountPrice: '$14.49',
   },
   { 
     id: 8, 
@@ -134,6 +148,8 @@ const books = [
     language: 'Español', 
     image: 'https://images.cdn3.buscalibre.com/fit-in/360x360/04/1f/041faab83743751d96b0b362733f33f4.jpg',
     stock: 10,
+    price: '$14.49',
+    discountPrice: '$11.99',
   },
   { 
     id: 9, 
@@ -145,6 +161,8 @@ const books = [
     language: 'Español', 
     image: 'https://images.cdn2.buscalibre.com/fit-in/360x360/4a/f8/4af862174ba709db62744f988c62e3b6.jpg',
     stock: 10,
+    price: '$21.99',
+    discountPrice: '$18.49',
   },
   { 
     id: 10, 
@@ -156,6 +174,8 @@ const books = [
     language: 'Inglés', 
     image: 'https://http2.mlstatic.com/D_NQ_NP_900443-MLU69466218611_052023-O.webp',
     stock: 10,
+    price: '$22.99',
+    discountPrice: '$19.99',
   },
   { 
     id: 11, 
@@ -167,6 +187,8 @@ const books = [
     language: 'Español', 
     image: 'https://m.media-amazon.com/images/I/71XszQkOZwL._AC_UF894,1000_QL80_.jpg',
     stock: 10,
+    price: '$18.49',
+    discountPrice: '$15.49',
   },
   { 
     id: 12, 
@@ -178,6 +200,8 @@ const books = [
     language: 'Inglés', 
     image: 'https://images.cdn1.buscalibre.com/fit-in/360x360/85/16/8516d825f44f192528d673955df2bc99.jpg',
     stock: 10,
+    price: '$17.49',
+    discountPrice: '$14.99',
   },
   { 
     id: 13, 
@@ -189,6 +213,8 @@ const books = [
     language: 'Inglés', 
     image: 'https://images.cdn1.buscalibre.com/fit-in/360x360/fc/c4/fcc4472cce4e4322ba48a81b1a313bfc.jpg',
     stock: 10,
+    price: '$16.99',
+    discountPrice: '$14.49',
   },
   { 
     id: 14, 
@@ -200,6 +226,8 @@ const books = [
     language: 'Inglés', 
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEZlh5OImpU6ruF8f0Zzhf9HcLClbS0mUYHjpAlAnnfMnFsSwPNBMStwCa12i8Bod3nKU&usqp=CAU',
     stock: 10,
+    price: '$15.49',
+    discountPrice: '$12.99',
   },
   { 
     id: 15, 
@@ -211,6 +239,8 @@ const books = [
     language: 'Ruso', 
     image: 'https://images.cdn3.buscalibre.com/fit-in/520x520/1d/c7/1dc7efb8101e02d6196c79c2c2518346.jpg',
     stock: 10,
+    price: '$19.99',
+    discountPrice: '$16.99',
   },
   { 
     id: 16, 
@@ -222,6 +252,8 @@ const books = [
     language: 'Inglés', 
     image: 'https://m.media-amazon.com/images/I/61BSarKvI0L._AC_UF1000,1000_QL80_.jpg',
     stock: 10,
+    price: '$16.99',
+    discountPrice: '$13.99',
   }
 ];
 
@@ -260,7 +292,7 @@ const books = [
               className="main-page__popular-book-image"
               src={book.image}
               alt={book.title}
-              onClick={() => navigate(`/book/${book.id}`)}
+              onClick={() => navigate(`/book/${book.title}`)}
             />
           ))}
         </div>
@@ -292,7 +324,7 @@ const books = [
 const Navbar = ({ cartItemCount }) => {
   return (
     <nav className="navbar">
-      <Link to="/main" className="navbar__logo">LibroStore</Link>
+      <Link to="/" className="navbar__logo">Bienvenidos !</Link>
       <div className="navbar__user">
         <div className="navbar__cart">
           <Link to="/cart" className="navbar__cart-link">

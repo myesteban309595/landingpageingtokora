@@ -143,10 +143,12 @@
     border: none;
     cursor: pointer;
     border-radius: 4px;
+    margin-bottom: 20px;
 }
 
 .book-detail-page__comment-form button:hover {
     background-color: #27ae60; /* Verde más oscuro para el hover */
+    transform: scale(1.05);
 }
 
 /* Estilos para el Navbar */
@@ -205,9 +207,10 @@
   
 .navbar__user-avatar {
     border-radius: 50%; /* Hace que la imagen del avatar sea redonda */
-    width: 40px;
-    height: 40px;
-    margin-right: 15px; /* Espacio entre el avatar y el carrito */
+    width: 55px;
+    height: 55px;
+    margin-right: 10px; /* Espacio entre el avatar y el carrito */
+    margin-left: 25px;
 }
   
 /* Avatar en los comentarios */
@@ -232,5 +235,5 @@
 }
 
 .book-detail-page__comment-coments {
-    margin-top: 50px;
+    margin-top: 10px;
 }
