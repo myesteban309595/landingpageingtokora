@@ -67,36 +67,43 @@ const Checkout = ({ cartItems, clearCart, handleClose }) => {
               {cartItems.length === 0 ? (
                 <p>Tu carrito está vacío.</p>
               ) : (
-                <ul>
-                  {cartItems.map((item, index) => (
-                    <li key={index} className="cart-item">
-                      <img src={item.image} alt={item.name} className="cart-item-image" />
-                      <div className="cart-item-details">
-                        <p><strong>{item.name}</strong></p>
-                        <p>Precio: ${item.price}</p>
-                        <div className="quantity-container">
-                          <label>Cantidad: </label>
-                          <input
-                            type="number"
-                            value={item.quantity}
-                            min="1"
-                            onChange={(e) => handleQuantityChange(index, parseInt(e.target.value))}
-                          />
+                <div className="cart-items-scrollable">
+                  <ul>
+                    {cartItems.map((item, index) => (
+                      <li key={index} className="cart-item">
+                        <img src={item.image} alt={item.name} className="cart-item-image" />
+                        <div className="cart-item-details">
+                          <p><strong>{item.name}</strong></p>
+                          <p>Precio: ${item.price}</p>
+                          <div className="quantity-container">
+                            <label>Cantidad: </label>
+                            <input
+                              type="number"
+                              value={item.quantity}
+                              min="1"
+                              onChange={(e) => handleQuantityChange(index, parseInt(e.target.value))}
+                            />
+                          </div>
                         </div>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               )}
             </div>
 
             <div className="checkout-summary">
+              <img
+                src="https://static.vecteezy.com/system/resources/previews/020/696/260/non_2x/3d-minimal-fast-delivery-concept-quick-parcel-transportation-product-contribution-quickly-parcels-shipping-delivery-car-with-an-orange-arrow-3d-illustration-png.png"
+                alt="Carrito"
+                className="cart-icon"
+              />
               <p><strong>Envío: </strong>$8.00</p>
               <p className="total-price"><strong>TOTAL: </strong>${calculateTotal()}</p>
             </div>
 
             <div className="action-buttons">
-              <button onClick={handleCancel} className="close-button">
+              <button onClick={handleCancel} className="close-button-cancel">
                 Cancelar
               </button>
               <button onClick={handleContinueShopping} className="submit-button">
@@ -180,14 +187,6 @@ const Checkout = ({ cartItems, clearCart, handleClose }) => {
         )}
 
         <button onClick={handleClose} className="close-button">Cerrar</button>
-
-        <div className="cart-icon-container">
-          <img
-            src="https://static.vecteezy.com/system/resources/previews/020/696/260/non_2x/3d-minimal-fast-delivery-concept-quick-parcel-transportation-product-contribution-quickly-parcels-shipping-delivery-car-with-an-orange-arrow-3d-illustration-png.png"
-            alt="Carrito"
-            className="cart-icon"
-          />
-        </div>
       </div>
     </div>
   );

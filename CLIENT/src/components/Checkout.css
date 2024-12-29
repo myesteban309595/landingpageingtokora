@@ -9,9 +9,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-  }
-  
-  .checkout-modal {
+}
+
+.checkout-modal {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -19,67 +19,73 @@
     max-width: 100%;
     z-index: 999; /* Asegura que el modal esté sobre otros elementos */
     overflow-y: auto; /* Permite el desplazamiento si el contenido es largo */
-  }
-  
-  h2, h3, p, label, .form-field, .total-price, .order-confirmation {
+}
+
+h2, h3, p, label, .form-field, .total-price, .order-confirmation {
     color: #000; /* Establecemos el color negro para todas las letras */
     font-family: Arial, sans-serif;
-  }
-  
-  .cart-summary ul {
+}
+
+.cart-summary ul {
     list-style-type: none;
     padding: 0;
-  }
-  
-  .cart-item {
+    height: auto;
+}
+
+.cart-items-scrollable {
+    max-height: 400px; /* Establece una altura máxima para la caja */
+    overflow-y: auto; /* Agrega scroll vertical si es necesario */
+}
+
+.cart-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
     border-bottom: 1px solid #eee;
-  }
-  
-  .cart-item-image {
+}
+
+.cart-item-image {
     width: 60px;
     height: 90px;
     object-fit: cover;
     margin-right: 10px;
-  }
-  
-  .cart-item-details {
+}
+
+.cart-item-details {
     flex-grow: 1;
     padding-left: 10px;
-  }
-  
-  .cart-item-details p {
+}
+
+.cart-item-details p {
     margin: 5px 0;
-  }
-  
-  .quantity-container {
+}
+
+.quantity-container {
     display: flex;
     align-items: center;
     margin-top: 5px;
-  }
-  
-  .quantity-container input {
+}
+
+.quantity-container input {
     width: 50px;
     padding: 5px;
     text-align: center;
     border: 1px solid #ccc;
     border-radius: 4px;
-  }
-  
-  .checkout-summary {
+}
+
+.checkout-summary {
     margin-top: 20px;
-  }
-  
-  .total-price {
+}
+
+.total-price {
     font-size: 1.2em;
     font-weight: bold;
-  }
-  
-  .submit-button,
-  .close-button {
+}
+
+.submit-button,
+.close-button-cancel{
     background-color: #4CAF50;
     color: white;
     padding: 10px;
@@ -88,132 +94,155 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  }
-  
-  .submit-button:hover {
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.close-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.submit-button:hover {
     background-color: #45a049;
-  }
-  
-  .close-button {
-    background-color: #f44336;
+}
+
+.close-button {
+    background-color: #f45236;
     margin-top: 0px;
-  }
-  
-  .close-button:hover {
+}
+
+.close-button-cancel{
+    background-color: #f4b136;
+    margin-top: 0px;
+}
+
+.close-button:hover {
     background-color: #e53935;
-  }
-  
-  .action-buttons {
+}
+
+.action-buttons {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
-  }
-  
-  .cart-icon-container {
+}
+
+.cart-icon-container {
     display: flex;
     justify-content: center;
     margin-top: 20px;
-  }
-  
-  .cart-icon {
-    width: 70px;
-    height: 55px;
+}
+
+.cart-icon {
+    width: 90px;
+    height: 75px;
     margin-right: 10px;
-  }
-  
-  .form-field {
+    margin-left: 180px;
+}
+
+.form-field {
     margin-bottom: 15px;
-  }
-  
-  input, .select-input {
+}
+
+input, .select-input {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
     border-radius: 4px;
     border: 1px solid #ccc;
-  }
-  
-  input[type="number"] {
+}
+
+input[type="number"] {
     width: 60px;
     padding: 5px;
     text-align: center;
-  }
-  
-  select {
+}
+
+select {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
     border-radius: 4px;
     border: 1px solid #ccc;
-  }
-  
-  .order-confirmation {
+}
+
+.order-confirmation {
     text-align: center;
     margin-top: 20px;
-  }
-  
-  .order-confirmation p {
+}
+
+.order-confirmation p {
     font-size: 1.2em;
     font-weight: bold;
-  }
-  
-  .checkout-summary {
+}
+
+.checkout-summary {
     margin-top: 20px;
-  }
-  
-  .checkout-modal h2, .checkout-modal h3 {
+}
+
+.checkout-modal h2, .checkout-modal h3 {
     text-align: center;
-  }
-  
-  .checkout-summary {
+}
+
+.checkout-summary {
     margin-top: 10px;
-  }
-  
-  .checkout-summary p {
+}
+
+.checkout-summary p {
     font-size: 1.1em;
-  }
-  
-  .checkout-summary .total-price {
+}
+
+.checkout-summary .total-price {
     font-size: 1.2em;
     font-weight: bold;
     color: #4CAF50;
-  }
-  
-  .cart-summary {
+}
+
+.cart-summary {
     margin-bottom: 20px;
-  }
-  
-  .cart-item {
+}
+
+.cart-item {
     display: flex;
     align-items: center;
     padding: 10px 0;
     border-bottom: 1px solid #eee;
-  }
-  
-  .cart-item img {
+}
+
+.cart-item img {
     width: 60px;
     height: 90px;
     object-fit: cover;
     margin-right: 10px;
-  }
-  
-  .cart-item .cart-item-details {
+}
+
+.cart-item .cart-item-details {
     flex-grow: 1;
-  }
-  
-  .cart-item .cart-item-details p {
+}
+
+.cart-item .cart-item-details p {
     margin: 5px 0;
-  }
-  
-  .cart-item .quantity-container {
+}
+
+.cart-item .quantity-container {
     margin-top: 10px;
-  }
-  
-  .cart-item .quantity-container input {
+}
+
+.cart-item .quantity-container input {
     width: 50px;
-  }
-  
-  .cart-item .quantity-container label {
+}
+
+.cart-item .quantity-container label {
     margin-right: 5px;
-  }
+}
+
   
