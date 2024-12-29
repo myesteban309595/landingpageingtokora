@@ -28,6 +28,8 @@
   border-radius: 8px; /* Bordes redondeados para cada item */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave para darle profundidad */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto hover */
+  width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+  height: auto; /* Permite que la altura se ajuste */
 }
 
 .cart-item:hover {
@@ -35,10 +37,17 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Sombra más fuerte al hacer hover */
 }
 
-.cart-item__image {
-  width: 100px;
+.cart-item img {
+  width: 120px;
   height: 180px;
   object-fit: cover;
+  margin-right: 10px;
+}
+
+.cart-item__image {
+  width: 200px; /* Tamaño mayor para la imagen */
+  height: 300px; /* Altura mayor para la imagen */
+  object-fit: cover; /* Asegura que la imagen cubra el contenedor */
   margin-right: 20px;
   border-radius: 8px; /* Bordes redondeados en la imagen */
 }
@@ -146,11 +155,11 @@
   font-weight: 600; /* Asegura que el texto en botones sea más legible */
 }
 
-.cart-item__details_input_number{
+.cart-item__details_input_number {
   margin-left: 10px;
 }
 
-.cart-page-message-noitem{
+.cart-page-message-noitem {
   color: black;
   font-size: large;
 }

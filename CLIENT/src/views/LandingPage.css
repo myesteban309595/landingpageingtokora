@@ -9,7 +9,7 @@
     align-items: center;
     flex-direction: column;
     text-align: center;
-    color: white;
+    color: white; /* Todo el texto será blanco */
     font-family: 'Arial', sans-serif;
     background-image: url('https://img.freepik.com/fotos-premium/libro-mundo-dentro_445983-4586.jpg');
     background-size: cover;
@@ -35,6 +35,7 @@
     opacity: 0;
     animation: fadeInText 0.8s ease forwards; /* Acelerado a 0.8s */
     margin-top: -20px;
+    color: white; /* Asegura que el texto de bienvenida sea blanco */
 }
 
 @keyframes fadeInText {
@@ -135,6 +136,7 @@
     margin-top: 20px;
     opacity: 0;
     animation: fadeInText 3s ease 1.5s forwards;
+    color: white; /* Asegura que el encabezado sea blanco */
 }
 
 /* Estilo para el texto que indica el tiempo */
@@ -143,4 +145,5 @@
     opacity: 0;
     animation: fadeInText 3s ease 2s forwards;
     margin-top: 10px;
+    color: white; /* Asegura que este texto sea blanco */
 }
